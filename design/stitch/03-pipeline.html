@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary": "#006c49", "on-tertiary-fixed-variant": "#5516be", "surface-container-lowest": "#ffffff", "outline": "#777587", "outline-variant": "#c7c4d8", "primary-fixed": "#e2dfff", "secondary-fixed": "#6ffbbe", "on-tertiary-container": "#e3d5ff", "surface-tint": "#4d44e3", "on-primary": "#ffffff", "secondary-fixed-dim": "#4edea3", "on-surface-variant": "#464555", "tertiary-fixed-dim": "#d0bcff", "error": "#ba1a1a", "inverse-on-surface": "#eaf1ff", "on-tertiary-fixed": "#23005c", "tertiary-fixed": "#e9ddff", "background": "#f8f9ff", "tertiary": "#571ac0", "surface-bright": "#f8f9ff", "inverse-surface": "#213145", "on-tertiary": "#ffffff", "primary-fixed-dim": "#c3c0ff", "secondary-container": "#6cf8bb", "primary-container": "#4f46e5", "surface-container-highest": "#d3e4fe", "surface-container-high": "#dce9ff", "surface-container-low": "#eff4ff", "on-surface": "#0b1c30", "error-container": "#ffdad6", "surface": "#f8f9ff", "on-primary-fixed-variant": "#3323cc", "on-secondary-fixed": "#002113", "primary": "#3525cd", "on-secondary-fixed-variant": "#005236", "on-error-container": "#93000a", "on-secondary": "#ffffff", "tertiary-container": "#6f3dd9", "inverse-primary": "#c3c0ff", "surface-variant": "#d3e4fe", "on-primary-fixed": "#0f0069", "surface-dim": "#cbdbf5", "on-secondary-container": "#00714d", "on-background": "#0b1c30", "on-error": "#ffffff", "surface-container": "#e5eeff", "on-primary-container": "#dad7ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.25rem", "gutter": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "0.75rem", "margin-md": "1.5rem", "margin-lg": "2rem", "space-xl": "2rem", "margin": "1rem", "gutter-lg": "1.5rem" }, "fontFamily": { "body-sm": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "display": ["Plus Jakarta Sans"], "code-tabular": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "body-md": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "label-md": ["Inter"] }, "fontSize": { "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "code-tabular": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "500" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest border-r border-outline-variant/30 z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between border-b border-outline-variant/20"><div class="flex items-center gap-space-sm"><img alt="Nexus CRM AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBaVue2UiU7d6B2qnKrEEiE8oOwnytHJ5DPeXeYCbqSK3_JQ2GRRKSfoJdbfcFtfZ5UcEHb2CPyfN7rvQIY2jnXU2WjDgV5AzV3dyVDPCwDrqwcfsiWOnJshq2Q_OnXxFZ_v-C7HXEDsf_of6_YAlU1zsrfvlWxxOrFzOFUmIB-EFDcoE1xDQM08_kP18tZOQoQKvQVRBiw9GFmBhJU547KH6Tmtr9SaKuyjeYKKg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Nexus CRM</span><span class="font-label-sm text-label-sm bg-primary-fixed text-primary px-1.5 py-0.5 rounded font-semibold">AI</span></div></div><div class="px-space-sm pt-space-md"><div class="px-space-sm pb-space-xs font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Principal</div><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary font-medium rounded-lg"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-body-md text-body-md">Dashboard</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="clientes" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">group</span><span class="font-body-md text-body-md">Clientes</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="leads" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">person_add</span><span class="font-body-md text-body-md">Leads</span></div><span class="font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant px-1.5 py-0.2 rounded-full">24</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-2 transition-all bg-primary-container text-on-primary font-medium rounded-lg" data-path="pipeline-de-vendas" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">view_kanban</span><span class="font-body-md text-body-md">Pipeline de Vendas</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="whatsapp" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">chat</span><span class="font-body-md text-body-md">WhatsApp</span></div><span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary bg-secondary-container/30 px-1.5 py-0.5 rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Online</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="tarefas" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">check_box</span><span class="font-body-md text-body-md">Tarefas</span></div><span class="font-label-sm text-label-sm bg-error-container text-error px-1.5 py-0.2 rounded-full">5</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="assistente-ia" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px] text-tertiary">auto_awesome</span><span class="font-body-md text-body-md">Assistente IA</span></div><span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed-variant px-1.5 py-0.5 rounded font-semibold">Pro</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="relatorios" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">bar_chart</span><span class="font-body-md text-body-md">Relatórios</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="automacoes" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">bolt</span><span class="font-body-md text-body-md">Automações</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="configuracoes" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">settings</span><span class="font-body-md text-body-md">Configurações</span></div></a></nav></div></div><div class="p-space-sm border-t border-outline-variant/20 bg-surface-container-lowest"><div class="p-space-sm rounded-lg bg-surface-container-low mb-space-xs"><div class="flex items-center justify-between mb-1"><span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">TechVentures Brasil</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant cursor-pointer">unfold_more</span></div><div class="font-label-sm text-label-sm text-on-surface-variant truncate">Plano Enterprise</div><div class="mt-space-sm"><div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1"><span>Armazenamento</span><span class="font-code-tabular text-code-tabular">68.4 / 100 GB</span></div><div class="w-full h-1.5 bg-outline-variant/30 rounded-full overflow-hidden"><div class="bg-primary-container h-full rounded-full" style="width: 68%"></div></div></div></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/20 z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.02)]"><div class="flex items-center gap-space-md"><div class="relative flex items-center w-80"><span class="material-symbols-outlined absolute left-space-sm text-[18px] text-on-surface-variant pointer-events-none">search</span><input class="w-full h-9 pl-9 pr-14 bg-surface rounded-lg border border-outline-variant/40 font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Buscar clientes, negócios, chats ou prompts..." type="text"/><span class="absolute right-2 px-1.5 py-0.5 rounded border border-outline-variant/40 bg-surface-container-low font-code-tabular text-code-tabular text-on-surface-variant">⌘K</span></div><div class="relative"><button class="inline-flex items-center gap-1.5 h-9 px-space-md rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md transition-all shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Criar</span><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-2 px-space-sm py-1.5 rounded-full bg-secondary-container/20 border border-secondary/20"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span class="font-label-sm text-label-sm text-secondary font-medium">WhatsApp Conectado (3 canais ativos)</span></div><button class="inline-flex items-center gap-1.5 h-9 px-space-sm rounded-lg bg-tertiary-fixed hover:bg-tertiary-fixed-dim text-on-tertiary-fixed font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-[18px] text-tertiary">arrow_back_ios_new</span><span class="font-semibold">Nexus Copilot</span></button><div class="flex items-center gap-1"><button class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-error text-on-error font-code-tabular text-[10px] font-bold">3</span></button><button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">help</span></button></div><div class="h-6 w-px bg-outline-variant/30"></div><div class="flex items-center gap-space-sm pl-space-xs cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOqzOmLKF1tHI2cFMEQ7Z-MWsFcmESr6tX154uittth2v8NraGpQ3uwlc1e8FcwPTEMEb9ODRU05XgIwvQI_SvDLfXBzU47Wih_PKgn7ZsKdqBhm17ZEeGRjt0mQ-y4vyp8Ahvo24RdVqv0J3PKJaqj1qXvOXnZQ2O1qG6PRIYIZNOB7m72BJr2J8SU1JcKjDhJ0exWkS2xFdZDxanjmu5wPZuPGowJCFMKd17-A"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold group-hover:text-primary transition-colors">Camila Duarte</span><span class="font-label-sm text-label-sm text-on-surface-variant">Diretora Comercial</span></div><span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-gutter-lg pt-space-lg pb-space-md flex flex-col gap-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Pipeline Comercial — Vendas Enterprise</h1>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+            Meta do Mês: R$ 500.000
+            <span class="text-on-surface-variant font-code-tabular text-code-tabular">(R$ 382.400 em aberto)</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+            Previsão IA: 84% atingimento
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Gestão em tempo real de negócios B2B e orquestração de negociações omnichannel.</p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="inline-flex items-center bg-surface-container-low p-1 rounded-lg shadow-sm">
+<button class="inline-flex items-center gap-1 px-space-sm py-1.5 rounded-md bg-surface-container-lowest text-primary font-label-sm text-label-sm font-semibold shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">view_kanban</span>
+            Kanban
+          </button>
+<button class="inline-flex items-center gap-1 px-space-sm py-1.5 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">table_rows</span>
+            Tabela
+          </button>
+<button class="inline-flex items-center gap-1 px-space-sm py-1.5 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">filter_alt</span>
+            Funil
+          </button>
+</div>
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-md hover:bg-primary transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+          Nova Oportunidade
+        </button>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm bg-surface-container-lowest p-space-sm rounded-xl shadow-sm">
+<div class="flex items-center gap-space-sm flex-wrap flex-1">
+<div class="relative min-w-[200px] flex items-center">
+<span class="material-symbols-outlined absolute left-2 text-[18px] text-on-surface-variant pointer-events-none">swap_calls</span>
+<select class="w-full h-9 pl-8 pr-7 bg-surface-container-low rounded-lg font-label-md text-label-md text-on-surface font-semibold appearance-none focus:outline-none focus:bg-surface-container-lowest transition-all cursor-pointer">
+<option selected="">Vendas B2B Enterprise</option>
+<option>Parcerias &amp; Canais</option>
+<option>Expansão &amp; Upsell</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 text-[16px] text-on-surface-variant pointer-events-none">unfold_more</span>
+</div>
+<div class="relative flex-1 min-w-[220px]">
+<span class="material-symbols-outlined absolute left-2.5 top-2 text-[18px] text-on-surface-variant pointer-events-none">search</span>
+<input class="w-full h-9 pl-9 pr-4 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest transition-all" placeholder="Filtrar negócios por empresa, lead ou cargo..." type="text"/>
+</div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<button class="inline-flex items-center gap-1 h-9 px-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg font-label-sm text-label-sm text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">person</span>
+            Responsável: Todos
+            <span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+<button class="inline-flex items-center gap-1 h-9 px-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg font-label-sm text-label-sm text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">payments</span>
+            Ticket &gt; R$ 30k
+          </button>
+<button class="inline-flex items-center gap-1 h-9 px-space-sm bg-tertiary-fixed hover:bg-tertiary-fixed-dim rounded-lg font-label-sm text-label-sm text-on-tertiary-fixed font-semibold transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">bolt</span>
+            Probabilidade IA &gt; 70%
+          </button>
+<button class="p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm self-end lg:self-center">
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          Pipeline Ativo (40 Deals)
+        </span>
+<span>•</span>
+<span class="font-code-tabular text-code-tabular text-on-surface font-semibold">Total: R$ 1.061.900</span>
+</div>
+</div>
+</div>
+<div class="w-full overflow-x-auto px-gutter-lg pb-space-xl pt-space-xs scroll-smooth">
+<div class="flex gap-space-md items-start min-w-[1960px] select-none">
+<div class="w-[280px] flex flex-col gap-space-sm shrink-0">
+<div class="p-space-sm rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Novo Lead</h2>
+</div>
+<span class="font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface shadow-sm">8</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Volume estimado</span>
+<span class="font-code-tabular text-code-tabular font-semibold text-on-surface">R$ 96.000</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="group relative p-space-md bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">AgroTech Brasil</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Carlos Silveira • VP Operações</span>
+</div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface font-medium">Média</span>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<span class="font-headline-md text-headline-md font-code-tabular text-primary">R$ 32.000</span>
+<span class="font-code-tabular text-label-sm text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Hoje 09:15
+              </span>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span>Score IA 65%</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fit Técnico</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Corporate headshot of executive woman Camila Duarte smiling in modern glass office setting with natural lighting and professional attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxg59tydKTFeo11NcVBjYnzIG9VuqkWDDRSSb7tunnJ_lwKG1FBuyKMfdiHaqQhEwoEg85H737qC6_ZXCIvs7B_aKeXwdxDn6YFx88Bd7_bVlozL9uAuGUgGyUpsrr98hdoJxvdu4iwpKR7MbUlkepzuX51Lz0zPP90Eq4uCCHhAfo95FVG4TZlkWsXu-SvInU4DdFgQ-XlecinKM2kxukjI8aNXWCE_hE21WYQQ"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Camila D.</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">alternate_email</span>
+<span class="material-symbols-outlined text-[16px]">attach_file</span>
+</div>
+</div>
+</div>
+<div class="group relative p-space-md bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Solaris Energia</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Fernanda Lemos • Diretora Inovação</span>
+</div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold">Alta</span>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<span class="font-headline-md text-headline-md font-code-tabular text-primary">R$ 64.000</span>
+<span class="font-code-tabular text-label-sm text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Ontem
+              </span>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary">domain</span>
+<span>Inbound Landing Page</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Portrait of senior sales consultant Thiago Rosa with blazer and glasses in contemporary business lounge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-OuLzJOyY9LuIXZ1xlLeCjnRQ-aYqrWJVIumnFA6MVrDRO7DCVqRwtVWw8qWnM6X_TbPtGqRZO-CRDyAVB9Ezg4elO7idVoHjVXJK_J1wO-op5HyuhEmUE6CliFfkFmBplAIGOlhyI40NPbzVjqOMNxyT_L3t-XhWLxHfQPnhJjIn7qfbS7yvX1RMA3Iv7j57YSp2DXnVMtHRfVmZJOBHOkZdKIPzSjfAD6x8YA"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Thiago Rosa</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-[280px] flex flex-col gap-space-sm shrink-0">
+<div class="p-space-sm rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-surface-tint"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Primeiro Contato</h2>
+</div>
+<span class="font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface shadow-sm">6</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Volume estimado</span>
+<span class="font-code-tabular text-code-tabular font-semibold text-on-surface">R$ 78.500</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="group relative p-space-md bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Varejo Digital Hub</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lucas Prado • Head Omnichannel</span>
+</div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface font-medium">Média</span>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<span class="font-headline-md text-headline-md font-code-tabular text-primary">R$ 45.000</span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-secondary-container/20 text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">chat</span>
+                Há 2h WhatsApp
+              </span>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span>Resposta do decisor em andamento</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Professional female executive Mariana Luz working with laptop in brightly lit tech office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUfb4T8K1_7q4ojhLwNrZDmuqXj_jr9dw4dhe7Tb1Oohv9XO2SUpvGC8tlpqOR-k5G7dk7WNbzO1C5xHNHumIUEQxq0jsShz9BfKgkaiD66vJL54ccPIEV6VyH3BWScRRe42m-HklNjTrNJ4S10omGuN4l1VW0FIWb75RX4vV0sih2MZzAvcUYRZhYWvWoKfJzs2IUXASXGoHOQ3cMatrooc7japhYtz_4lyoSdw"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mariana Luz</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-secondary">mark_chat_read</span>
+</div>
+</div>
+<div class="group relative p-space-md bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">LogiCargo Express</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Beto Castro • Gerente Geral</span>
+</div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed font-semibold">Qualificado IA</span>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<span class="font-headline-md text-headline-md font-code-tabular text-primary">R$ 33.500</span>
+<span class="font-code-tabular text-label-sm text-on-surface-variant">Hoje 08:30</span>
+</div>
+<div class="p-space-xs rounded-lg bg-tertiary-fixed/40 flex items-center justify-between text-on-tertiary-fixed">
+<div class="flex items-center gap-1 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">smart_toy</span>
+<span>Lead qualificado pelo Bot WhatsApp</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Portrait of corporate rep Thiago Rosa smiling casually in office lobby with architectural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyYkYNpbKn12A2sO5ykKqkHFbokFwEicHRHUwCJfXl8JhXbaFqVV7Gp3JuvyWW5vwVUpNGjUFHX2dmvOoMxeqMSg5te0F_OVWe6MSVQZ-iyf0VYN7HHPvlIAGMzXvqi-XIA0fkZFN-ifW_o5lolsIkDuDQrHzvBcF7VTz4kRYFmOdU8_-qjNzTjLxR6lxUjb8juihD2DMODoERv1atC6sFmJx3M_iCmvFW577gzA"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Thiago Rosa</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">phone_in_talk</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-[280px] flex flex-col gap-space-sm shrink-0">
+<div class="p-space-sm rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Qualificado</h2>
+</div>
+<span class="font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface shadow-sm">5</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Volume estimado</span>
+<span class="font-code-tabular text-code-tabular font-semibold text-on-surface">R$ 142.000</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="group relative p-space-md bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Fintech Vanguard</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Juliana Meireles • CTO</span>
+</div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-error text-on-error font-semibold uppercase animate-pulse">Urgente</span>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<span class="font-headline-md text-headline-md font-code-tabular text-primary">R$ 85.000</span>
+<span class="font-code-tabular text-label-sm text-on-surface-variant">Hoje 10:30</span>
+</div>
+<div class="p-space-xs rounded-lg bg-tertiary-fixed flex items-center justify-between text-on-tertiary-fixed">
+<div class="flex items-center gap-1 font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+<span>Probabilidade 88%</span>
+</div>
+<span class="font-label-sm text-label-sm">Alta Adesão</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Portrait of senior account director Camila Duarte in crisp attire in modern executive suite" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvQpRV-qWmUAjy5-SFWXTMZaIzvjk4PEmKXFQiq-LSnX-_z2Ms4mLCvO7wpuwcs3efoSUcKqIvZjPSTwN-o2aeXatYMs_2QxUcDjmj3jlyrZWdanwb_muWce5kO0ORP4PVOj37UsnrcC0mEfCm0Gzc21s38D0fvtjgdBPpNsreBRe2Z9PffaovfZwlFDPB7A9SU2RtmKYQO7xcCkJfQ4ZMRUkv4LYXrnvpg4uuRw"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Camila D.</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">chat</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">event_available</span>
+</div>
+</div>
+</div>
+<div class="group relative p-space-md bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">HealthCare Plus</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dr. Henrique Viana • CEO</span>
+</div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface font-semibold">Alta</span>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<span class="font-headline-md text-headline-md font-code-tabular text-primary">R$ 57.000</span>
+<span class="font-code-tabular text-label-sm text-on-surface-variant">Ontem 16:40</span>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">BDR: Demonstração agendada</span>
+<span class="font-code-tabular text-code-tabular text-primary font-semibold">Score 74</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Smiling portrait of sales rep Mariana Luz in bright boardroom office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdgPYcDmcMsRyFWvl5aChc7uSOn5jo9PUo_YdlDsS_qdQEyUkZ0tCYKGVAYgszsMozvUxf_xOyh7-CcLUiX14G2vXQ_2gO_eBgzde8YDPIsuf1cwOp4CSRyrfmietUP7CfJWzqX_933xhE-gv8yGsqfYiV_GvWvcuRFqK2JmdG2ngOGmn1FL8tlwPRw8znXlwy1hORH0pLA5kxpneWhlGPqwaRWPTL13_X0aM9qg"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mariana Luz</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_month</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-[280px] flex flex-col gap-space-sm shrink-0">
+<div class="p-space-sm rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Proposta Enviada</h2>
+</div>
+<span class="font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface shadow-sm">4</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Volume estimado</span>
+<span class="font-code-tabular text-code-tabular font-semibold text-on-surface">R$ 195.000</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="group relative p-space-md bg-surface-container-lowest rounded-xl shadow-md hover:shadow-xl transition-all cursor-pointer flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">DataCore Sistemas</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Renata Vasconcelos • CFO</span>
+</div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold">Destaque</span>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<span class="font-display text-[22px] leading-tight font-code-tabular text-primary">R$ 74.400</span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-secondary-container/30 text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                WhatsApp há 15m
+              </span>
+</div>
+<div class="p-space-xs rounded-lg bg-secondary-container/20 flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+                  Fechamento iminente (92%)
+                </span>
+<span class="font-code-tabular text-label-sm text-secondary font-semibold">Alta Prioridade</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface">Proposta visualizada 4 vezes nas últimas 2 horas.</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Headshot of enterprise executive Camila Duarte with blazer in modern corporate workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfK2HiHCNvleDek5HiVXNxsnDDJmFv3BSi9NDbR7zFyQHF0CoXicHf5gRSotTRd3uyhwsgqcVZEsHkrbLU5pyDRVmV-A8EUJfD3vAmaEreYeQx2G86Vya_YsVhfJzXCOU0RM82qKfU8NwfH8o1Zhn45ealn8vPzzGKR6vmfVUpxK7RNM9YsD6GiZkxph5LCfpFWTaeAJT9YqFgu6F9mBaU4HlJd7VnM8cIgXmHgg"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Camila D.</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-secondary">description</span>
+</div>
+</div>
+<div class="group relative p-space-md bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Grupo Nexus Sul</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Marcelo Antunes • Diretor Geral</span>
+</div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface font-semibold">Alta</span>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<span class="font-headline-md text-headline-md font-code-tabular text-primary">R$ 120.600</span>
+<span class="font-code-tabular text-label-sm text-on-surface-variant">Há 3 dias</span>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Aguardando parecer jurídico</span>
+<span class="font-code-tabular text-label-sm text-on-surface">v2.4 Final</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Professional portrait of enterprise deal closer Ricardo Lima wearing charcoal suit against blurred architectural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZS_ynu_6F11NZ3w0sxSK5dlRUQo-o-97uF-v2ebJOl2922FTsuRGXzgTu_tVVpXyerLWSh4bgefQhhW9q9-G22QkWCqBMiP7K0xtjk07mdaRtRMCGL66RvLDivtXjQWiZkCIcOd9Pp_to13C1L7fjz6_tj8wu83av8hdgbbO9JVPw2nkciHiJhz1rQSdNSLMoYiitKMk_BaHq4H3lIkMYn4nmfAI7Gw2BKZVMaw"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ricardo Lima</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">pending_actions</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-[280px] flex flex-col gap-space-sm shrink-0">
+<div class="p-space-sm rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Em Negociação</h2>
+</div>
+<span class="font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface shadow-sm">3</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Volume estimado</span>
+<span class="font-code-tabular text-code-tabular font-semibold text-on-surface">R$ 138.000</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="group relative p-space-md bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Indústria MetalSul</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Guilherme Prado • Gerente Suprimentos</span>
+</div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold">Crítico</span>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<span class="font-headline-md text-headline-md font-code-tabular text-primary">R$ 98.000</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Revisão de Minuta</span>
+</div>
+<div class="p-space-xs rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex flex-col gap-1">
+<div class="flex items-center gap-1 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">tips_and_updates</span>
+<span>Insight do Nexus Copilot</span>
+</div>
+<span class="font-body-sm text-body-sm font-medium">Sugere 3% de desconto à vista para fechamento até sexta-feira.</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Camila Duarte smiling confidentially in glass boardroom with modern tablet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQZnP3RIiITK6I--U5rfFKS3cwRBHl_7TeiP6Gfaqb6lHNfwdKMPUcbNvGG8OS_KKRfSbBlgx009fejG3HruX6WJi6BaPO2TOtLWxRhkSGq4jRyNNL2keqM7Qraluje8oOSeDDEuIJxGKaFELNXDllmElYLu05NVCU6bvXikXMb6f3lvSAVw4p4eNaCoggkyh-aGQNKrb0qgt9HSvIe97Ildbv7PXFTWHIMBw6xw"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Camila D.</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">chat</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">history_edu</span>
+</div>
+</div>
+</div>
+<div class="group relative p-space-md bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Alpha Cloud</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Larissa Toledo • Head TI</span>
+</div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface font-medium">Média</span>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<span class="font-headline-md text-headline-md font-code-tabular text-primary">R$ 40.000</span>
+<span class="font-code-tabular text-label-sm text-on-surface-variant">Aguardando diretoria</span>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Validação SLA Enterprise</span>
+<span class="font-label-sm text-label-sm font-code-tabular text-secondary font-semibold">75% Chance</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Ricardo Lima professional corporate profile portrait against soft modern office gradient" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChbVRqObqetV_M0GSiSbVCO3o9eKUJx2K_s2KjOzEAs1w3uN4tfWMVOKPoJhFjAVHDjMW5MCA5JSJpU1G6GzMiQjS-9FRS7jw_mjkIvvvPa-qtBGEN6rGrybDwQDKJ7gl9XuVlr00CEavNt-iXDmIull7avcKx5BOUbdNT7-pLQxPQ2KNfzyj1-OwdatBPUiJGJIRZ3T8pQkHG2JVX2SRLBJdbiTuVjw0Ap_MSvQ"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ricardo Lima</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">rule</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-[280px] flex flex-col gap-space-sm shrink-0">
+<div class="p-space-sm rounded-xl bg-secondary-container/20 shadow-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<h2 class="font-headline-sm text-headline-sm text-secondary font-bold">Venda Concluída</h2>
+</div>
+<span class="font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded-full bg-surface-container-lowest text-secondary shadow-sm">12</span>
+</div>
+<div class="flex items-center justify-between text-secondary font-label-sm text-label-sm">
+<span>Fechados este mês</span>
+<span class="font-code-tabular text-code-tabular font-bold">R$ 412.000</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="group relative p-space-md bg-surface-container-lowest rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors">OmniLog Logística</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Paulo Mendonça • COO</span>
+</div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">military_tech</span>
+                Ganho
+              </span>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<span class="font-display text-[22px] leading-tight font-code-tabular text-secondary font-bold">R$ 115.000</span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-secondary-container/40 text-secondary font-label-sm text-label-sm font-bold">
+                Fechado Hoje
+              </span>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span>Contrato Assinado via DocuSign</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Portrait of smiling top performer Camila Duarte wearing elegant blazer in corporate hallway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRxQHjME2XRJJC3wYT41IdA_dzz2pwO6DCDzytJb5oAIYRRUhbTTQs-Qoxq0MminpGXhfyVf08aTrmng784OTNVKuGq9HwyuYv0tLfkdAnWnZcOT6FsuO1S8hlir7LdM84ShzFrQgPwF1ytLrqOBxql-6mXUk0n9mWbzb2nVw4G09SRdON2uc2Rvpvot839LV1lCAG0bV6gU_5TW-UbHCYgrANFTepTYlit3xOvw"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Camila D.</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
+</div>
+</div>
+<div class="group relative p-space-md bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-secondary transition-colors">Banco Horizonte</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Daniel Farias • Head Inovação</span>
+</div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-secondary-fixed-dim text-on-secondary-fixed font-semibold">Enterprise</span>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<span class="font-headline-md text-headline-md font-code-tabular text-secondary font-bold">R$ 180.000</span>
+<span class="font-code-tabular text-label-sm text-on-surface-variant">Fechado há 4 dias</span>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Onboarding em curso</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">CS Atribuído</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Executive portrait of deal maker Ricardo Lima in business setting with daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtlLHOxwtn28T4Mfql1G-z3TVAEiFmplr16oVRYj_8YvbFYSoo44nKarzaqhEl0azshPXGeCRS7EqS1yT3CiQmKy2Vo5kwRB22tPrLEn2c4UkLMt5IPB97hNrWkut2qXiL5i85kTJWAfF10Nzp1y9a0RF6zSr4qcWQpXvxy_gFXeseUoEbmrOKStFkIgDS2ZqMwf6jiQizrvmAnCYXvqEzY0IU2cB08Crq5vFxow"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ricardo Lima</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-secondary">handshake</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-[280px] flex flex-col gap-space-sm shrink-0">
+<div class="p-space-sm rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Perdido</h2>
+</div>
+<span class="font-label-sm text-label-sm font-semibold px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface shadow-sm">2</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Perdas acumuladas</span>
+<span class="font-code-tabular text-code-tabular font-semibold text-on-surface">R$ 42.000</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="group relative p-space-md bg-surface-container-lowest/80 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col gap-space-sm opacity-80 hover:opacity-100">
+<div class="flex items-start justify-between gap-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface line-through decoration-outline">MegaVarejo Ltda</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Otávio Guimarães • Diretor Compras</span>
+</div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant font-medium">Inativo</span>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<span class="font-headline-md text-headline-md font-code-tabular text-on-surface-variant">R$ 42.000</span>
+<span class="font-code-tabular text-label-sm text-on-surface-variant">Encerrado</span>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex flex-col gap-0.5 text-on-surface-variant">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Motivo do Descarte:</span>
+<span class="font-body-sm text-body-sm">Orçamento congelado pela matriz para 2025.</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5">
+<img class="w-6 h-6 rounded-full object-cover grayscale" data-alt="Portrait of senior sales consultant Thiago Rosa looking reflective in modern conference space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGDiLw5c2XIUgfOGUhHE-amIf-SiWbHovE2IY8DMQiPqwFjR8aREoDqwt1y_fMk9Plm13TUHelixGp8FfcEfZ-hamBUhDqWKOQwBFjivGdUiCPU6ufawOEsWdlSCaOxCSB4NffxCI9j5YEvyqRlJltsLeADLQTLJT-yTTy1vpZPLVXHHy2dcwcfHInI-r5csAqovfzttqSkWQUv7DXiy2bshBkpZmmieQKjzC2hQ"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Thiago Rosa</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[15px]">event_repeat</span> Retomar Q3
+              </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed bottom-4 right-6 z-30 flex items-center gap-2">
+<div class="p-2.5 rounded-full bg-surface-container-lowest shadow-xl flex items-center gap-3 px-4">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Nexus AI Copilot Ativo</span>
+</div>
+<div class="h-4 w-px bg-outline-variant"></div>
+<button class="font-label-sm text-label-sm text-primary hover:underline font-semibold flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+        Ver 3 Ações Recomendadas
+      </button>
+</div>
+</div>
+</div></main></div></body></html>

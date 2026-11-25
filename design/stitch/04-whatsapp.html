@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary": "#006c49", "on-tertiary-fixed-variant": "#5516be", "surface-container-lowest": "#ffffff", "outline": "#777587", "outline-variant": "#c7c4d8", "primary-fixed": "#e2dfff", "secondary-fixed": "#6ffbbe", "on-tertiary-container": "#e3d5ff", "surface-tint": "#4d44e3", "on-primary": "#ffffff", "secondary-fixed-dim": "#4edea3", "on-surface-variant": "#464555", "tertiary-fixed-dim": "#d0bcff", "error": "#ba1a1a", "inverse-on-surface": "#eaf1ff", "on-tertiary-fixed": "#23005c", "tertiary-fixed": "#e9ddff", "background": "#f8f9ff", "tertiary": "#571ac0", "surface-bright": "#f8f9ff", "inverse-surface": "#213145", "on-tertiary": "#ffffff", "primary-fixed-dim": "#c3c0ff", "secondary-container": "#6cf8bb", "primary-container": "#4f46e5", "surface-container-highest": "#d3e4fe", "surface-container-high": "#dce9ff", "surface-container-low": "#eff4ff", "on-surface": "#0b1c30", "error-container": "#ffdad6", "surface": "#f8f9ff", "on-primary-fixed-variant": "#3323cc", "on-secondary-fixed": "#002113", "primary": "#3525cd", "on-secondary-fixed-variant": "#005236", "on-error-container": "#93000a", "on-secondary": "#ffffff", "tertiary-container": "#6f3dd9", "inverse-primary": "#c3c0ff", "surface-variant": "#d3e4fe", "on-primary-fixed": "#0f0069", "surface-dim": "#cbdbf5", "on-secondary-container": "#00714d", "on-background": "#0b1c30", "on-error": "#ffffff", "surface-container": "#e5eeff", "on-primary-container": "#dad7ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.25rem", "gutter": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "0.75rem", "margin-md": "1.5rem", "margin-lg": "2rem", "space-xl": "2rem", "margin": "1rem", "gutter-lg": "1.5rem" }, "fontFamily": { "body-sm": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "display": ["Plus Jakarta Sans"], "code-tabular": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "body-md": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "label-md": ["Inter"] }, "fontSize": { "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "code-tabular": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "500" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest border-r border-outline-variant/30 z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between border-b border-outline-variant/20"><div class="flex items-center gap-space-sm"><img alt="Nexus CRM AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBaVue2UiU7d6B2qnKrEEiE8oOwnytHJ5DPeXeYCbqSK3_JQ2GRRKSfoJdbfcFtfZ5UcEHb2CPyfN7rvQIY2jnXU2WjDgV5AzV3dyVDPCwDrqwcfsiWOnJshq2Q_OnXxFZ_v-C7HXEDsf_of6_YAlU1zsrfvlWxxOrFzOFUmIB-EFDcoE1xDQM08_kP18tZOQoQKvQVRBiw9GFmBhJU547KH6Tmtr9SaKuyjeYKKg"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Nexus CRM</span><span class="font-label-sm text-label-sm bg-primary-fixed text-primary px-1.5 py-0.5 rounded font-semibold">AI</span></div></div><div class="px-space-sm pt-space-md"><div class="px-space-sm pb-space-xs font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Principal</div><nav class="flex flex-col gap-0.5" data-active-classes="bg-primary-container text-on-primary font-medium rounded-lg"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-body-md text-body-md">Dashboard</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="clientes" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">group</span><span class="font-body-md text-body-md">Clientes</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="leads" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">person_add</span><span class="font-body-md text-body-md">Leads</span></div><span class="font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant px-1.5 py-0.2 rounded-full">24</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="pipeline-de-vendas" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">view_kanban</span><span class="font-body-md text-body-md">Pipeline de Vendas</span></div></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-2 transition-all bg-primary-container text-on-primary font-medium rounded-lg" data-path="whatsapp" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">chat</span><span class="font-body-md text-body-md">WhatsApp</span></div><span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary bg-secondary-container/30 px-1.5 py-0.5 rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Online</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="tarefas" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">check_box</span><span class="font-body-md text-body-md">Tarefas</span></div><span class="font-label-sm text-label-sm bg-error-container text-error px-1.5 py-0.2 rounded-full">5</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="assistente-ia" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px] text-tertiary">auto_awesome</span><span class="font-body-md text-body-md">Assistente IA</span></div><span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed-variant px-1.5 py-0.5 rounded font-semibold">Pro</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="relatorios" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">bar_chart</span><span class="font-body-md text-body-md">Relatórios</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="automacoes" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">bolt</span><span class="font-body-md text-body-md">Automações</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="configuracoes" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">settings</span><span class="font-body-md text-body-md">Configurações</span></div></a></nav></div></div><div class="p-space-sm border-t border-outline-variant/20 bg-surface-container-lowest"><div class="p-space-sm rounded-lg bg-surface-container-low mb-space-xs"><div class="flex items-center justify-between mb-1"><span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">TechVentures Brasil</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant cursor-pointer">unfold_more</span></div><div class="font-label-sm text-label-sm text-on-surface-variant truncate">Plano Enterprise</div><div class="mt-space-sm"><div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1"><span>Armazenamento</span><span class="font-code-tabular text-code-tabular">68.4 / 100 GB</span></div><div class="w-full h-1.5 bg-outline-variant/30 rounded-full overflow-hidden"><div class="bg-primary-container h-full rounded-full" style="width: 68%"></div></div></div></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/20 z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.02)]"><div class="flex items-center gap-space-md"><div class="relative flex items-center w-80"><span class="material-symbols-outlined absolute left-space-sm text-[18px] text-on-surface-variant pointer-events-none">search</span><input class="w-full h-9 pl-9 pr-14 bg-surface rounded-lg border border-outline-variant/40 font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Buscar clientes, negócios, chats ou prompts..." type="text"/><span class="absolute right-2 px-1.5 py-0.5 rounded border border-outline-variant/40 bg-surface-container-low font-code-tabular text-code-tabular text-on-surface-variant">⌘K</span></div><div class="relative"><button class="inline-flex items-center gap-1.5 h-9 px-space-md rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md transition-all shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Criar</span><span class="material-symbols-outlined text-[16px]">expand_more</span></button></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-2 px-space-sm py-1.5 rounded-full bg-secondary-container/20 border border-secondary/20"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span class="font-label-sm text-label-sm text-secondary font-medium">WhatsApp Conectado (3 canais ativos)</span></div><button class="inline-flex items-center gap-1.5 h-9 px-space-sm rounded-lg bg-tertiary-fixed hover:bg-tertiary-fixed-dim text-on-tertiary-fixed font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-[18px] text-tertiary">arrow_back_ios_new</span><span class="font-semibold">Nexus Copilot</span></button><div class="flex items-center gap-1"><button class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-error text-on-error font-code-tabular text-[10px] font-bold">3</span></button><button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">help</span></button></div><div class="h-6 w-px bg-outline-variant/30"></div><div class="flex items-center gap-space-sm pl-space-xs cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOqzOmLKF1tHI2cFMEQ7Z-MWsFcmESr6tX154uittth2v8NraGpQ3uwlc1e8FcwPTEMEb9ODRU05XgIwvQI_SvDLfXBzU47Wih_PKgn7ZsKdqBhm17ZEeGRjt0mQ-y4vyp8Ahvo24RdVqv0J3PKJaqj1qXvOXnZQ2O1qG6PRIYIZNOB7m72BJr2J8SU1JcKjDhJ0exWkS2xFdZDxanjmu5wPZuPGowJCFMKd17-A"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold group-hover:text-primary transition-colors">Camila Duarte</span><span class="font-label-sm text-label-sm text-on-surface-variant">Diretora Comercial</span></div><span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full h-[calc(100vh-4rem)] overflow-hidden bg-surface">
+<div class="flex h-full w-full overflow-hidden">
+<!-- COLUNA 1: Lista de Conversas e Filtros Omnichannel -->
+<aside class="w-[360px] min-w-[340px] max-w-[380px] h-full flex flex-col bg-surface-container-lowest shadow-sm z-10">
+<!-- Topo: Conexão Oficial e Ações -->
+<div class="p-space-md pb-space-sm bg-surface-container-lowest">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">API Oficial Conectada</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[11px]">+55 11 3290-8800 • Instância 01</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Novo Chat" type="button">
+<span class="material-symbols-outlined text-[19px]">edit_square</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Mais Opções" type="button">
+<span class="material-symbols-outlined text-[19px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Campo de Pesquisa -->
+<div class="relative flex items-center mb-space-sm">
+<span class="material-symbols-outlined absolute left-space-sm text-[18px] text-on-surface-variant pointer-events-none">search</span>
+<input class="w-full h-8 pl-8 pr-12 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary-container transition-all" placeholder="Buscar conversas ou contatos..." type="text"/>
+<span class="absolute right-2 px-1.5 py-0.5 rounded bg-surface-container font-code-tabular text-code-tabular text-on-surface-variant text-[10px]">/</span>
+</div>
+<!-- Filtros Rápidos (Chips) -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
+<button class="px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary whitespace-nowrap shadow-sm" type="button">
+            Todas
+          </button>
+<button class="px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors flex items-center gap-1" type="button">
+            Não lidas <span class="px-1 rounded-full bg-primary-fixed text-primary font-code-tabular text-[10px]">4</span>
+</button>
+<button class="px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-tertiary-fixed/60 hover:bg-tertiary-fixed text-on-tertiary-fixed-variant whitespace-nowrap transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[13px] text-tertiary">auto_awesome</span> Aguardando IA <span class="px-1 rounded-full bg-tertiary text-on-tertiary font-code-tabular text-[10px]">2</span>
+</button>
+<button class="px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors" type="button">
+            Comercial
+          </button>
+</div>
+</div>
+<!-- Lista de Conversas Recentes -->
+<div class="flex-1 overflow-y-auto px-space-xs py-1 space-y-1">
+<!-- Contato 1: Ativo (Lucas Menezes) -->
+<div class="relative flex items-center gap-3 p-space-sm rounded-xl bg-surface-container cursor-pointer transition-all shadow-sm">
+<div class="relative shrink-0">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Portrait of an executive sales VP, confident Brazilian man in a modern casual navy blazer, natural office lighting, sharp profile photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXOL91coiB6jBOEkIAspsUgBH3eRsmyfbWqW1XBY3CTQDR9lbP9ki2A5baWTytK_5yx25ulGpCbcqrTsWnqz4SFCMwf37q8Y-CZOfFV0fMFfU-VEj7sdFkH85tSkITcbVfUGxRzpqy3cPqnIfMNu3EwGmXrQNptgKsH3NhCxrfEX6EiDFsEUsip9l3c6Xsv23nRJuOA9r96yp7P47HvpCfMg8llTBJwvMk7mNeaw"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Lucas Menezes</span>
+<span class="font-code-tabular text-code-tabular text-primary font-semibold">11:42</span>
+</div>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant truncate mb-1">
+<span class="material-symbols-outlined text-[15px] text-primary shrink-0">done_all</span>
+<span class="truncate">Perfeito, pode me enviar a minuta com os termos ajustados?</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary-fixed text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">description</span> Proposta Enviada
+              </span>
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary bg-tertiary-fixed/50 px-1.5 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span> IA Copilot
+                </span>
+<span class="flex h-4 w-4 items-center justify-center rounded-full bg-primary-container text-on-primary font-code-tabular text-[10px] font-bold">1</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Contato 2: Dra. Beatriz Falcão -->
+<div class="relative flex items-center gap-3 p-space-sm rounded-xl hover:bg-surface-container-low cursor-pointer transition-all">
+<div class="relative shrink-0">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Close up portrait of Dra Beatriz Falcao, smart female healthcare tech executive with glasses, friendly warm expression, daylight corporate studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR9cIFt78GEwbfpZKdD6_YQP1SVsJ9npP0xGxgEPcspCywGi1DA2DMRmX3UGnu58aagVjZXdf1SFfFQQlkr3EoV_VwpZnRIipR_Rz_075KVtN15SBGxivUiYdUmRjoIJ3WOTaDL1pevw7Jsh1TS4ZSI8RXZa3H52ecdS3caiPNofJ4FBaVlhJ7H5ngse_vxE04zj38zrVpn8AFBLVYLWOkKIyEceJAivATXaGKng"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Dra. Beatriz Falcão</span>
+<span class="font-code-tabular text-code-tabular text-on-surface-variant">10:15</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium truncate mb-1">
+              Vamos fechar o plano anual para os 15 usuários.
+            </p>
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-secondary-container/40 text-secondary font-label-sm text-label-sm font-semibold">
+                🔥 Quente • 94% IA
+              </span>
+<span class="flex h-4 w-4 items-center justify-center rounded-full bg-primary-container text-on-primary font-code-tabular text-[10px] font-bold">2</span>
+</div>
+</div>
+</div>
+<!-- Contato 3: Rodrigo Silveira -->
+<div class="relative flex items-center gap-3 p-space-sm rounded-xl hover:bg-surface-container-low cursor-pointer transition-all">
+<div class="relative shrink-0">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Professional portrait headshot of Rodrigo Silveira, logistical director, middle-aged male with grey temples, clean aesthetic, studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxYoAyHm550gC9tx0ARpcUBpoBjWTaiBrd9HT8tLIatu61HE4ziNeBxE-YsdlyBSZPKAHy_OSD8VawXRFMoi3VFtUcSiVdC1ACJu8P6Frs8kpzDJjW-XSeRgFzw85kHlfEWgKoFsU7NWnFr3CkmA0kvQJ7Lj6qWFGrQ-ub_2EtML-wqAV0OmnJjOqNfusTbWs46LyvCnQJTKBBQE2Fv__Ohg5NgIACkvKvMZ0vVA"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Rodrigo Silveira</span>
+<span class="font-code-tabular text-code-tabular text-on-surface-variant">Ontem</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mb-1">
+              Qual o prazo de integração com nosso ERP SAP?
+            </p>
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+                LogExpress • Qualificado
+              </span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">done_all</span>
+</div>
+</div>
+</div>
+<!-- Contato 4: Mariana Duarte -->
+<div class="relative flex items-center gap-3 p-space-sm rounded-xl hover:bg-surface-container-low cursor-pointer transition-all">
+<div class="relative shrink-0">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Corporate headshot of Mariana Duarte, marketing coordinator at fintech, confident modern professional woman with subtle warm smile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSYhgHB5k2n7T6jq3N2zpFRIQKoEVeKgFIzcIh7Pq6mTkVhLQf-Kky8WFKoBVlfjxun_bavV4TckRBq67GfTzNTvNJuIO01pwnBWfvmm6O7F0uxskY6vqwBntu5YFcVYeXe7PfQlDWRM0Lo-dXrVabOUKQ9mLwGge2J7OexCKh4bWD667VP224kWabYGj_lsYVC3kXweHm3l1y_LfRnxJWBykxZdZwO-DKhpDMPw"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Mariana Duarte</span>
+<span class="font-code-tabular text-code-tabular text-on-surface-variant">Ontem</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mb-1">
+              Você pode reenviar a fatura de renovação?
+            </p>
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+                FinanPay • Pós-venda
+              </span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">schedule</span>
+</div>
+</div>
+</div>
+<!-- Contato 5: Gabriel Prado -->
+<div class="relative flex items-center gap-3 p-space-sm rounded-xl hover:bg-surface-container-low cursor-pointer transition-all">
+<div class="relative shrink-0">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Headshot of tech founder Gabriel Prado, young innovator in charcoal turtleneck against modern clean architectural background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4glY4iFc84nT9DGM-MDgoHVmyDiTo9ykCwmAb_YzqAy-28mwLiAcCFMUhWRFlM1biKmtz63Gkh6fxd2dpJ-FBLyWb4XAWMHmpwewL2_PDdYVj8VJuEtBT-601HgQReRYTFuZwYttS9vtIFSBWZW18_3Z7Qt0pO26UMUsXrYokEk2h9aoYObtIGmiNsR2MT1fPlE9iKugMlPLg1RKl9CJqcH6aqgSpmdDwVnna6g"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Gabriel Prado</span>
+<span class="font-code-tabular text-code-tabular text-on-surface-variant">12/Out</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mb-1">
+              Agendamos a call de alinhamento para sexta?
+            </p>
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+                OmniScale • Agendamento
+              </span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">check</span>
+</div>
+</div>
+</div>
+<!-- Contato 6: Vanessa Couto -->
+<div class="relative flex items-center gap-3 p-space-sm rounded-xl hover:bg-surface-container-low cursor-pointer transition-all">
+<div class="relative shrink-0">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of senior procurement executive Vanessa Couto, sharp professional setting, confident and engaged demeanor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9K58j-mv_x2oYCJ2auEBZ8Q8ipElwekop3Awe5q6Tm3u4xKOL6qV-xlWnYpzh88OLvT0ee5nJpGmEsZ-R3HQgQuE53gBQ-lh4t95kyOKVLTAaqtdvSVe7inEmz0nYF70kR4DLLkQ48lQEWjp71cUHYM527AXID1hQdFvoKbc4JH9n6i2RC45R0XsQSd2Bp-HRID6DgNeR6Hbcr4f4bGQA3gP3BgwyZP2V746l6w"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Vanessa Couto</span>
+<span class="font-code-tabular text-code-tabular text-on-surface-variant">11/Out</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mb-1">
+              Recebemos os dados bancários. Aguardando.
+            </p>
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+                Apex Brasil • Financeiro
+              </span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">done_all</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- COLUNA 2: Chat Ativo com Copiloto IA -->
+<main class="flex-1 flex flex-col h-full bg-surface-container-low min-w-0 relative">
+<!-- Topo do Chat Ativo -->
+<div class="h-16 px-space-lg bg-surface-container-lowest flex items-center justify-between shadow-sm z-20 shrink-0">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<img class="w-10 h-10 rounded-full object-cover ring-2 ring-primary-fixed" data-alt="Portrait of Lucas Menezes VP of Operations at DataCore, crisp business executive photography in navy blue jacket." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4paJBPmX5f5vOgZZZCOwmZjPRKTOo0H4sZAYSsIk7Vw8kBlk1bNoWOWGPxo_0K9ma4BzNJ1Szc6gj04hwL-GlaG6Mwjv6vm-4XGJ31EfYpHQZ-SZiDklGhXaynpSoxAJSBUIFeT0PD5Q9w0xxSsveyo7zk5Rfa4J7SwGFqrxxvpXyqyIKrqKMRa4HdiYbfKF6TX2LZnNI4-ralThXWixSt7WAAcZXt3lDjopDIA"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Lucas Menezes</h2>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px] text-tertiary">arrow_back_ios_new</span> Copiloto Sugestivo
+              </span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm truncate">
+<span class="text-on-surface font-medium">DataCore Sistemas</span>
+<span>•</span>
+<span class="text-secondary font-medium">Online via WhatsApp</span>
+<span>•</span>
+<span class="font-code-tabular text-code-tabular">Tempo de resposta médio: 3 min</span>
+</div>
+</div>
+</div>
+<!-- Ações Rápidas de CRM no Topo -->
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">add_task</span>
+<span class="hidden xl:inline">Criar Tarefa</span>
+</button>
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">trending_up</span>
+<span class="hidden xl:inline">Avançar Pipeline</span>
+</button>
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">chevron_backward</span>
+<span class="hidden xl:inline">Transferir</span>
+</button>
+<div class="h-6 w-px bg-outline-variant/30 mx-1"></div>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Banner Inteligente Contextual AI -->
+<div class="bg-gradient-to-r from-tertiary-fixed via-primary-fixed to-surface-container-lowest px-space-lg py-2.5 flex items-center justify-between shadow-sm shrink-0">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="flex h-7 w-7 items-center justify-center rounded-lg bg-tertiary text-on-tertiary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">lightbulb</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface truncate">
+<strong class="font-semibold text-tertiary">Resumo Nexus AI:</strong> O cliente aprovou o escopo técnico e aguarda minuta com faturamento na holding. Intenção de compra: <span class="font-semibold text-secondary">92% (Altíssima)</span>.
+          </p>
+</div>
+<div class="flex items-center gap-2 shrink-0 pl-2">
+<button class="font-label-sm text-label-sm text-primary hover:underline font-semibold" type="button">Ver análise preditiva</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+</div>
+<!-- Feed do Histórico de Mensagens -->
+<div class="flex-1 overflow-y-auto p-space-lg space-y-4">
+<!-- Marcador de Data -->
+<div class="flex items-center justify-center my-2">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant font-code-tabular text-code-tabular shadow-sm">
+            Hoje, 14 de Outubro
+          </span>
+</div>
+<!-- Mensagem Recebida: Dúvida de SLA -->
+<div class="flex items-end gap-2 max-w-[75%]">
+<img class="w-7 h-7 rounded-full object-cover shrink-0" data-alt="Lucas Menezes avatar square detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuhDx_mBBJbrcvKUITM7VI6c2a7UUCmvqgFqWB4E5KtNWKyzfctQN2a12g8N2MFdXY7qOJ2LgrlS8WyL3aXANDMYz5uD9247XFsBNix1kbJLsvsuk5pgWyBnwsEex1geR1DV8LwTF31XNS30fNeYHFSaV4qcu2p8uVPSdJYZY6kHZNkje1F5sq1t2jg3M-2ELNU6NBFViX8m7V1UZuSAlMHUdnO0vy6sYsmiHioQ"/>
+<div class="flex flex-col">
+<div class="bg-surface-container-lowest p-space-md rounded-2xl rounded-bl-xs shadow-sm text-on-surface">
+<p class="font-body-md text-body-md mb-1">
+                Olá Camila! Estava revendo a minuta do contrato com nosso Diretor de TI. Ele levantou uma dúvida importante sobre o suporte: o plano Enterprise realmente cobre SLA de 1 hora para incidentes críticos em finais de semana?
+              </p>
+<div class="flex items-center justify-end gap-1">
+<span class="font-code-tabular text-code-tabular text-on-surface-variant text-[11px]">11:28</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Mensagem Enviada: Resposta com Documento PDF -->
+<div class="flex items-end justify-end gap-2 ml-auto max-w-[75%]">
+<div class="flex flex-col items-end">
+<div class="bg-primary-container text-on-primary p-space-md rounded-2xl rounded-br-xs shadow-sm">
+<p class="font-body-md text-body-md mb-space-sm text-on-primary">
+                Com certeza, Lucas! Nosso SLA para incidentes de Severidade 1 é garantido em contrato em até 45 minutos com canal direto via WhatsApp e pager dedicado 24/7.
+              </p>
+<!-- Anexo em Cartão no Balão de Conversa -->
+<div class="flex items-center gap-3 p-space-sm rounded-xl bg-primary text-on-primary mb-1">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-surface-container-lowest text-error shrink-0">
+<span class="material-symbols-outlined text-[24px]">picture_as_pdf</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="font-label-md text-label-md font-semibold truncate text-surface-container-lowest">Nexus_SLA_Enterprise_2025.pdf</div>
+<div class="font-code-tabular text-code-tabular text-on-primary-container text-[11px]">1.8 MB • Anexo Oficial Validado</div>
+</div>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 text-on-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+<div class="flex items-center justify-end gap-1 mt-1">
+<span class="font-code-tabular text-code-tabular text-on-primary-container text-[11px]">11:34</span>
+<span class="material-symbols-outlined text-[14px] text-secondary-fixed">done_all</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Mensagem Recebida: Gatilho Decisivo de Fechamento -->
+<div class="flex items-end gap-2 max-w-[75%]">
+<img class="w-7 h-7 rounded-full object-cover shrink-0" data-alt="Lucas Menezes avatar square detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrVEPKnMhjS1-rZlx5s2YFh0wEM_IMvi4BbUQJGb0ZM7KgttFMO8r9NuuB5mFB-1iqxNF2_cwPDiepNgn7FsiD83bVNlW41_zIaEGrTFhIg-SysxE3yYpQf55riVBB3zfMJSiKgyA17V6wMO7PhEr1vNdpLzKUUY9_7cvLiPnnwXjYP7lp6Uq4xn-jWpcVHgnddhNSKBmdDrXyMg1zQ8lWsn-GDKOqFbcACyXgxQ"/>
+<div class="flex flex-col">
+<div class="bg-surface-container-lowest p-space-md rounded-2xl rounded-bl-xs shadow-sm text-on-surface">
+<p class="font-body-md text-body-md mb-1 font-medium">
+                Perfeito! Conseguem faturar no CNPJ da nossa holding controladora? Me enviando a proposta ajustada assinamos digitalmente hoje ainda para iniciar o onboarding na segunda!
+              </p>
+<div class="flex items-center justify-end gap-1">
+<span class="font-code-tabular text-code-tabular text-on-surface-variant text-[11px]">11:42</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 mt-1 px-1">
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">psychology</span> Sentimento Detectado: Prontidão Máxima de Fechamento
+              </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Caixa de Sugestão Inteligente IA (Smart Copilot Reply Box) -->
+<div class="px-space-lg pb-space-sm pt-1">
+<div class="bg-gradient-to-r from-tertiary-fixed/40 via-surface-container-lowest to-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+<div class="flex items-start gap-2.5">
+<div class="p-1 rounded-lg bg-tertiary text-on-tertiary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">arrow_back_ios_new</span>
+</div>
+<div class="text-left">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-tertiary font-bold uppercase tracking-wide">Sugestão de Resposta IA Copilot</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[11px]">(Baseada no playbook Enterprise)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+                “Com certeza, Lucas! Já ajustei a minuta com os dados da holding e mantive as condições especiais. Segue o link autenticado para assinatura digital imediata via Docusign:”
+              </p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0 self-end md:self-center">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" type="button">
+              Editar
+            </button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all" id="btn-smart-reply" type="button">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>Inserir e Enviar</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Barra Inferior de Entrada e Disparo de Mensagens -->
+<div class="p-space-md pt-0 bg-surface-container-low shrink-0">
+<div class="bg-surface-container-lowest rounded-2xl p-space-xs shadow-md flex items-end gap-1.5">
+<!-- Botões de Anexo e Mídia -->
+<div class="flex items-center gap-0.5 pb-1 pl-1">
+<button class="p-2 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Anexar Arquivo" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+</button>
+<button class="p-2 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Respostas Rápidas (/)" type="button">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</button>
+<button class="p-2 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Templates de Contrato" type="button">
+<span class="material-symbols-outlined text-[20px]">contract</span>
+</button>
+</div>
+<!-- Textarea / Input de Mensagem -->
+<div class="flex-1 min-w-0 py-2 px-1">
+<textarea class="w-full bg-transparent font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none resize-none leading-relaxed max-h-32" id="chat-input" placeholder="Digite uma mensagem ou use / para templates e comandos IA..." rows="1"></textarea>
+</div>
+<!-- Ações de Envio -->
+<div class="flex items-center gap-1 pb-1 pr-1">
+<button class="p-2 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Gravar Áudio" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<button class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-container hover:bg-primary text-on-primary shadow-sm transition-all transform active:scale-95" id="btn-send-message" type="button">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between px-2 pt-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[11px]">Pressione <strong>Enter</strong> para enviar, <strong>Shift + Enter</strong> para quebra de linha</span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[13px]">lock</span> Criptografia de ponta a ponta oficial Meta Cloud
+          </span>
+</div>
+</div>
+</main>
+<!-- COLUNA 3: Contexto CRM e Perfil do Cliente 360° -->
+<aside class="w-[340px] min-w-[320px] max-w-[360px] h-full flex flex-col bg-surface-container-lowest shadow-sm z-10 overflow-y-auto">
+<!-- Cabeçalho do Perfil -->
+<div class="p-space-lg text-center bg-gradient-to-b from-surface-container-low to-surface-container-lowest">
+<div class="relative inline-block mb-space-sm">
+<img class="w-20 h-20 rounded-full object-cover shadow-md ring-4 ring-surface-container-lowest mx-auto" data-alt="Executive photo portrait of Lucas Menezes VP DataCore Sistemas, focused professional look with crisp clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX1Mv_J1BpBUHlhpPqdOkZ_2WXE33jIn6hOlv2MZIY2Bp1ZWyXAT1G358JArsmvU7yUH0nYKnJA6ekcW2MREE4G9O2gg-5RFRemgdVC1S8wiipkVODWYIdfoocv6T_2ugyhm8Sbvx59b-TwFQsOy_jH6BrobYO7PUhRuctgsFNzHROF6VTqpioNksr4m6JdCPiEphd3wi7tYOowVq3DXwoRk9hubAzPU74Wkgobg"/>
+<span class="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Lucas Menezes</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">VP de Operações &amp; Expansão</p>
+<span class="inline-flex items-center gap-1 mt-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">
+          DataCore Sistemas S.A.
+        </span>
+<!-- Links Rápidos de Contato -->
+<div class="flex items-center justify-center gap-2 mt-space-md">
+<a class="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" href="tel:+5511988421209" title="Ligar via VoIP">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+<a class="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" href="mailto:lucas.menezes@datacore.com.br" title="Enviar Email">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+<button class="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Reunião Virtual Google Meet" type="button">
+<span class="material-symbols-outlined text-[18px]">video_call</span>
+</button><button class="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Copiar Dados do Contato" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Detalhes de Contato Estruturados -->
+<div class="px-space-lg py-space-sm space-y-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">smartphone</span> WhatsApp
+          </span>
+<span class="font-code-tabular text-code-tabular text-on-surface font-medium">+55 11 98842-1209</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">mail</span> E-mail
+          </span>
+<span class="font-code-tabular text-code-tabular text-on-surface truncate max-w-[170px]" title="lucas.menezes@datacore.com.br">lucas.menezes@datacore.com.br</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">domain</span> Segmento
+          </span>
+<span class="text-on-surface font-medium">Enterprise B2B Software</span>
+</div>
+</div>
+<!-- Card de Oportunidade Vinculada no Pipeline -->
+<div class="m-space-md p-space-md rounded-2xl bg-surface-container-low shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-tertiary font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">monetization_on</span> Deal Ativo no Funil
+          </span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-secondary-container/40 text-secondary font-label-sm text-label-sm font-semibold">
+            Score IA 98
+          </span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-0.5">Plano Enterprise Anual</h4>
+<div class="font-display text-[22px] font-bold text-primary font-headline-md leading-none mb-space-sm">
+          R$ 74.400,00 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">/ano</span>
+</div>
+<!-- Seletor de Fase do Funil -->
+<div class="space-y-1.5 mb-space-md">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant font-medium">Fase Atual:</span>
+<span class="font-semibold text-primary">Em Negociação Final</span>
+</div>
+<!-- Barra de Etapas Visual -->
+<div class="grid grid-cols-4 gap-1">
+<div class="h-1.5 rounded-full bg-primary-container"></div>
+<div class="h-1.5 rounded-full bg-primary-container"></div>
+<div class="h-1.5 rounded-full bg-primary-container"></div>
+<div class="h-1.5 rounded-full bg-outline-variant/40"></div>
+</div>
+</div>
+<!-- Probabilidade Preditiva -->
+<div class="space-y-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Probabilidade de Fechamento:</span>
+<span class="font-code-tabular text-code-tabular text-secondary font-bold">92% (Muito Alta)</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 92%"></div>
+</div>
+</div>
+</div>
+<!-- Tags do Lead -->
+<div class="px-space-md mb-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold block mb-2">Marcadores de Inteligência</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">#B2B</span>
+<span class="px-2 py-0.5 rounded-lg bg-primary-fixed text-primary font-label-sm text-label-sm font-semibold">#Enterprise</span>
+<span class="px-2 py-0.5 rounded-lg bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">#TomadorDeDecisão</span>
+<span class="px-2 py-0.5 rounded-lg bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">#PrioridadeAlta</span>
+<span class="px-2 py-0.5 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">#AuditoriaLGPD</span>
+</div>
+</div>
+<!-- Notas Internas Rápidas -->
+<div class="px-space-md mb-space-md">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Notas Internas da Equipe</span>
+<button class="font-label-sm text-label-sm text-primary hover:underline font-semibold" type="button">+ Adicionar</button>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container text-on-surface font-body-sm text-body-sm shadow-xs">
+<p class="leading-relaxed">
+            "Cliente solicitou faturamento no CNPJ da holding controladora para benefício fiscal. Minuta com cláusula padrão de LGPD validada pelo jurídico (Dr. Matheus)."
+          </p>
+<span class="block mt-1 font-code-tabular text-code-tabular text-on-surface-variant text-[10px]">Por Camila Duarte • Hoje às 09:20</span>
+</div>
+</div>
+<!-- Histórico de Interações Recentes (Resumo 360°) -->
+<div class="px-space-md mb-space-lg flex-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold block mb-space-sm">Linha do Tempo CRM</span>
+<div class="space-y-3 relative before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high pl-6">
+<div class="relative">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-secondary ring-4 ring-surface-container-lowest"></span>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Mensagem no WhatsApp</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Prontidão para assinatura hoje após minuta da holding.</p>
+<span class="font-code-tabular text-code-tabular text-on-surface-variant text-[11px]">11:42</span>
+</div>
+<div class="relative">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-primary-container ring-4 ring-surface-container-lowest"></span>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Demonstração Executiva Concluída</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Apresentação para 4 decisores técnicos via Google Meet.</p>
+<span class="font-code-tabular text-code-tabular text-on-surface-variant text-[11px]">Ontem 16:30 • por Camila Duarte</span>
+</div>
+<div class="relative">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-outline-variant ring-4 ring-surface-container-lowest"></span>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Lead Capturado &amp; Enriquecido</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Campanha Google Ads Enterprise — Fit de 96% no ICP.</p>
+<span class="font-code-tabular text-code-tabular text-on-surface-variant text-[11px]">14/Out 09:12 • Origem Web</span>
+</div>
+</div>
+</div>
+<!-- Rodapé com CTA Ficha Completa -->
+<div class="p-space-md border-t border-outline-variant/10 bg-surface-container-lowest sticky bottom-0">
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-space-md rounded-xl bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold transition-all shadow-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">account_box</span>
+<span>Abrir Ficha Completa do Cliente</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</aside>
+</div>
+</div>
+<script>
+  (function() {
+    const btnSmartReply = document.getElementById('btn-smart-reply');
+    const chatInput = document.getElementById('chat-input');
+    const btnSend = document.getElementById('btn-send-message');
+
+    if (btnSmartReply && chatInput) {
+      btnSmartReply.addEventListener('click', function() {
+        const smartText = "Com certeza, Lucas! Já ajustei a minuta com os dados da holding e mantive as condições especiais de 5% à vista. Segue o link autenticado para assinatura digital imediata via Docusign: https://sign.datacore.com.br/nx-8921";
+        chatInput.value = smartText;
+        chatInput.focus();
+        
+        // Efeito visual sutil de preenchimento inteligente
+        chatInput.classList.add('ring-2', 'ring-primary-container');
+        setTimeout(() => {
+          chatInput.classList.remove('ring-2', 'ring-primary-container');
+        }, 800);
+      });
+    }
+
+    if (btnSend && chatInput) {
+      btnSend.addEventListener('click', function() {
+        if (chatInput.value.trim().length > 0) {
+          chatInput.value = '';
+          chatInput.placeholder = 'Mensagem enviada com sucesso!';
+          setTimeout(() => {
+            chatInput.placeholder = 'Digite uma mensagem ou use / para templates e comandos IA...';
+          }, 2000);
+        }
+      });
+    }
+  })();
+</script></main></div></body></html>

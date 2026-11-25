@@ -1,0 +1,58 @@
+services:
+  - type: web
+    name: nexus-crm-api
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: pnpm install --frozen-lockfile
+    startCommand: pnpm --filter @nexus/api start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CRON_SECRET
+        generateValue: true
+      - key: WEBHOOK_SECRET
+        generateValue: true
+      - key: SESSION_ENCRYPTION_KEY
+        generateValue: true
+      - key: WEB_ORIGIN
+        sync: false
+      - key: DEMO_MODE
+        value: "true"
+      - key: WHATSAPP_PROVIDER
+        value: disabled
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: META_WA_PHONE_NUMBER_ID
+        sync: false
+      - key: META_WA_ACCESS_TOKEN
+        sync: false
+      - key: META_WA_APP_SECRET
+        sync: false
+      - key: WHATSAPP_SESSIONS_DIR
+        value: ./.sessions
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY_FALLBACKS
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3-flash-preview
+
+  - type: web
+    name: nexus-crm-web
+    runtime: static
+    plan: free
+    buildCommand: pnpm install --frozen-lockfile && pnpm --filter @nexus/web build
+    staticPublishPath: apps/web/dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        sync: false
