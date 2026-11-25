@@ -241,7 +241,7 @@ export default function WhatsAppPage() {
               <span className="grid size-8 place-items-center rounded-lg bg-secondary-soft text-secondary"><MessageCircle className="size-4" /></span>
               <div className="min-w-0 flex-1">
                 <p className="text-[10px] font-bold uppercase tracking-wide text-secondary">API Oficial Conectada</p>
-                <p className="truncate text-[11px] font-semibold text-ink">{account?.phone_number ?? "+55 11 3290-8800"} · {account?.provider === "meta_cloud" ? "Meta Cloud" : "Instância 01"}</p>
+                <p className="truncate text-[11px] font-semibold text-ink">{account?.phone_number ? formatPhone(account.phone_number) : "Sem número"} · {account?.provider === "meta_cloud" ? "Meta Cloud" : "Instância 01"}</p
               </div>
               <button type="button" className="rounded p-1 text-muted hover:bg-surface-low" onClick={() => toast("Canal sincronizado.", "info")}><MoreVertical className="size-4" /></button>
             </div>

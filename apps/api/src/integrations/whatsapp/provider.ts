@@ -10,6 +10,7 @@ export interface IncomingWhatsAppMessage {
   mediaUrl: string | null;
   timestamp: string;
   customerName?: string;
+  isHistory?: boolean;
 }
 
 export interface WhatsAppProvider {

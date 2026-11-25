@@ -259,7 +259,7 @@ const TASKS: Task[] = [
 const ACCOUNT: WhatsappAccount = {
   id: "90000000-0000-4000-8000-000000000001",
   organization_id: ORG.tech.id,
-  phone_number: "+551132908800",
+  phone_number: "",
   provider: "baileys",
   connection_status: "connected",
   session_reference: "session-techventures-01",
@@ -640,7 +640,7 @@ export class MemoryStore {
       account = {
         id: randomUUID(),
         organization_id: orgId,
-        phone_number: "+551132908800",
+        phone_number: "",
         provider: "baileys",
         connection_status: "connecting",
         session_reference: `session-${orgId.slice(0, 8)}`,
@@ -778,6 +778,7 @@ export class MemoryStore {
       createdAt: string;
       customerName?: string;
       accountId?: string;
+      isHistory?: boolean;
     },
   ) {
     const duplicate = this.messages.find(
@@ -807,7 +808,7 @@ export class MemoryStore {
       account = {
         id: randomUUID(),
         organization_id: orgId,
-        phone_number: "+551132908800",
+        phone_number: "",
         provider: "baileys",
         connection_status: "connected",
         session_reference: null,
@@ -856,10 +857,12 @@ export class MemoryStore {
     };
     this.messages.push(message);
     void persistMessage(message);
-    conversation.last_message_at = message.created_at;
+    if (!conversation.last_message_at || new Date(message.created_at) > new Date(conversation.last_message_at)) {
+      conversation.last_message_at = message.created_at;
+    }
     conversation.updated_at = message.created_at;
     conversation.status = "open";
-    conversation.unread_count += 1;
+    if (!input.isHistory) conversation.unread_count += 1;
     void persistConversation(conversation as any);
     return { duplicate: false as const, message, conversation };
   }

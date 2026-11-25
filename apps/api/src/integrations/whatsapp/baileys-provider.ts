@@ -45,7 +45,7 @@ export class BaileysProvider implements WhatsAppProvider {
       sessionsDir: string;
       encryptionKey: string;
       onQr: (accountId: string, qr: string) => void;
-      onConnection?: (accountId: string, status: "connected" | "connecting" | "disconnected") => void;
+      onConnection?: (accountId: string, status: "connected" | "connecting" | "disconnected", phoneNumber?: string) => void;
       logger: { info: (o: unknown, m?: string) => void; error: (o: unknown, m?: string) => void };
     },
   ) {}
@@ -77,7 +77,8 @@ export class BaileysProvider implements WhatsAppProvider {
     socket.ev.on("connection.update", async (update) => {
       if (update.qr) this.options.onQr(accountId, update.qr);
       if (update.connection === "open") {
-        this.options.onConnection?.(accountId, "connected");
+        const phone = socket.user?.id?.split(":")[0]?.split("@")[0];
+        this.options.onConnection?.(accountId, "connected", phone ? `+${phone}` : undefined);
       }
       if (update.connection === "close") {
         this.sockets.delete(accountId);
@@ -92,8 +93,18 @@ export class BaileysProvider implements WhatsAppProvider {
       }
     });
     socket.ev.on("messages.upsert", async (event) => {
-      if (event.type !== "notify") return;
-      for (const message of event.messages) await this.handleMessage(accountId, message);
+      const isHistory = event.type === "append";
+      if (event.type !== "notify" && event.type !== "append") return;
+      for (const message of event.messages) {
+        if (message.key.fromMe) continue;
+        const jid = message.key.remoteJid;
+        if (!jid || jid.endsWith("@g.us") || jid === "status@broadcast") continue;
+        try {
+          await this.handleMessage(accountId, message, isHistory);
+        } catch {
+          // Ignora mensagens individuais que falhem (ex.: sem texto).
+        }
+      }
     });
     return { status: "connecting" as const };
   }
@@ -124,7 +135,7 @@ export class BaileysProvider implements WhatsAppProvider {
     return { externalMessageId: result?.key.id ?? "" };
   }
 
-  private async handleMessage(accountId: string, message: WAMessage) {
+  private async handleMessage(accountId: string, message: WAMessage, isHistory = false) {
     if (!message.message || !message.key.remoteJid || message.key.fromMe) return;
     const content = message.message;
     const messageType = content.imageMessage
@@ -157,6 +168,7 @@ export class BaileysProvider implements WhatsAppProvider {
       messageType,
       mediaUrl: null,
       timestamp: new Date(Number(message.messageTimestamp ?? Date.now()) * 1000).toISOString(),
+      isHistory,
     });
   }
 }

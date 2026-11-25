@@ -18,7 +18,7 @@ type Logger = {
 export async function createWhatsAppProvider(
   logger: Logger,
   onQr?: (accountId: string, qr: string) => void,
-  onConnection?: (accountId: string, status: "connected" | "connecting" | "disconnected") => void,
+  onConnection?: (accountId: string, status: "connected" | "connecting" | "disconnected", phoneNumber?: string) => void,
 ): Promise<WhatsAppProvider | null> {
   if (env.WHATSAPP_PROVIDER === "disabled") return null;
 

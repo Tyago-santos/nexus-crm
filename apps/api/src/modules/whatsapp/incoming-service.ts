@@ -28,8 +28,13 @@ export async function processIncomingMessage(
     createdAt: data.timestamp,
     customerName: data.customerName,
     accountId: data.accountId,
+    isHistory: data.isHistory,
   });
   if (ingested.duplicate) return { skipped: true as const, reason: "duplicate" as const };
+
+  if (data.isHistory) {
+    return { skipped: false as const, ai: "history" as const, conversation_id: ingested.conversation.id };
+  }
 
   const conversation = ingested.conversation;
   if (conversation.ai_mode === "manual") {

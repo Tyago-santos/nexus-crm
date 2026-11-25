@@ -26,10 +26,11 @@ export async function configureWhatsAppProvider(logger: Logger) {
       account.connection_status = "connecting";
       account.updated_at = new Date().toISOString();
     }
-  }, (accountId, status) => {
+  }, (accountId, status, phoneNumber) => {
     const account = store.accounts.find((a) => a.id === accountId);
     if (!account) return;
     account.connection_status = status;
+    if (phoneNumber) account.phone_number = phoneNumber;
     account.updated_at = new Date().toISOString();
     if (status === "connected") store.pendingQr.delete(accountId);
   });
