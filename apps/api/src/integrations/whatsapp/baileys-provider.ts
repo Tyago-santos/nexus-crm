@@ -1,7 +1,30 @@
 import { join } from "node:path";
-import makeWASocket, { DisconnectReason, type WASocket, type WAMessage } from "@whiskeysockets/baileys";
+import * as baileysNamespace from "@whiskeysockets/baileys";
+import type { WASocket, WAMessage } from "@whiskeysockets/baileys";
 import type { IncomingWhatsAppMessage, WhatsAppProvider } from "./provider";
 import { useEncryptedAuthState } from "./encrypted-auth-state";
+
+/**
+ * A forma do export default do Baileys muda conforme o interop ESM/CJS do
+ * runtime (Node 22/24/25 + tsx). Resolvemos em runtime para aceitar tanto
+ * `default` função quanto `default.makeWASocket` / export nomeado.
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const baileys = baileysNamespace as any;
+
+const makeWASocket = (() => {
+  const candidates = [baileys.default, baileys.default?.default, baileys.makeWASocket, baileys];
+  const fn = candidates.find((candidate) => typeof candidate === "function");
+  if (!fn) throw new Error("makeWASocket não encontrado no módulo Baileys");
+  return fn as typeof import("@whiskeysockets/baileys").default;
+})();
+
+const DisconnectReason =
+  baileys.DisconnectReason ?? baileys.default?.DisconnectReason ?? ({ loggedOut: 401 } as const);
+
+const fetchLatestBaileysVersion = baileys.fetchLatestBaileysVersion as
+  | (() => Promise<{ version: [number, number, number]; isLatest?: boolean }>)
+  | undefined;
 
 type MessageHandler = (message: IncomingWhatsAppMessage) => Promise<void>;
 
@@ -15,6 +38,7 @@ export class BaileysProvider implements WhatsAppProvider {
   private sockets = new Map<string, WASocket>();
   private handler: MessageHandler | null = null;
   private organizationByAccount = new Map<string, string>();
+  private waVersion: [number, number, number] | undefined;
 
   constructor(
     private readonly options: {
@@ -41,7 +65,12 @@ export class BaileysProvider implements WhatsAppProvider {
       join(this.options.sessionsDir, `${accountId}.json`),
       this.options.encryptionKey,
     );
-    const socket = makeWASocket({ auth: state, printQRInTerminal: false, syncFullHistory: true });
+    const socket = makeWASocket({
+      auth: state,
+      version: await this.resolveVersion(),
+      printQRInTerminal: false,
+      syncFullHistory: true,
+    });
     this.sockets.set(accountId, socket);
 
     socket.ev.on("creds.update", saveCreds);
@@ -67,6 +96,17 @@ export class BaileysProvider implements WhatsAppProvider {
       for (const message of event.messages) await this.handleMessage(accountId, message);
     });
     return { status: "connecting" as const };
+  }
+
+  private async resolveVersion() {
+    if (this.waVersion) return this.waVersion;
+    try {
+      const latest = await fetchLatestBaileysVersion?.();
+      if (latest?.version) this.waVersion = latest.version;
+    } catch {
+      // mantém a versão embutida do Baileys
+    }
+    return this.waVersion;
   }
 
   async disconnect(accountId: string) {
