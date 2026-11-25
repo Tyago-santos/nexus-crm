@@ -98,7 +98,7 @@ export class BaileysProvider implements WhatsAppProvider {
       for (const message of event.messages) {
         if (message.key.fromMe) continue;
         const jid = message.key.remoteJid;
-        if (!jid || jid.endsWith("@g.us") || jid === "status@broadcast") continue;
+        if (!jid || jid === "status@broadcast") continue;
         try {
           await this.handleMessage(accountId, message, isHistory);
         } catch {
@@ -157,17 +157,31 @@ export class BaileysProvider implements WhatsAppProvider {
       null;
     const organizationId = this.organizationByAccount.get(accountId);
     if (!organizationId) return;
+    const jid = message.key.remoteJid;
+    const isGroup = jid.endsWith("@g.us");
+    let customerName = message.pushName ?? undefined;
+    if (isGroup) {
+      try {
+        const socket = this.sockets.get(accountId);
+        const meta = await socket?.groupMetadata?.(jid);
+        if (meta?.subject) customerName = meta.subject;
+      } catch {
+        // ignora falha ao buscar metadados do grupo
+      }
+      if (!customerName) customerName = "Grupo";
+    }
     await this.handler?.({
       organizationId,
       accountId,
-      externalChatId: message.key.remoteJid,
+      externalChatId: jid,
       externalMessageId: message.key.id ?? `${Date.now()}`,
-      sender: message.key.remoteJid,
+      sender: message.key.participant ?? jid,
       recipient: "me",
       content: text,
       messageType,
       mediaUrl: null,
       timestamp: new Date(Number(message.messageTimestamp ?? Date.now()) * 1000).toISOString(),
+      customerName,
       isHistory,
     });
   }

@@ -304,7 +304,7 @@ export default function WhatsAppPage() {
                 <Avatar name={selected.customer_name} size="sm" online />
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-xs font-bold text-ink">{selected.customer_name}</p>
-                  <p className="truncate text-[10px] text-muted">{selected.customer_company ?? "Contacto WhatsApp"} · {formatPhone(selected.customer_phone)}</p>
+                  <p className="truncate text-[10px] text-muted">{selected.customer_company ?? "Contacto WhatsApp"} · {selected.customer_phone ? formatPhone(selected.customer_phone) : "Grupo"}</p>
                 </div>
                 <Button variant="ghost" size="icon" onClick={() => setDetailsOpen(true)} aria-label="Abrir detalhes do contacto">
                   <UserRound className="size-4.5" />

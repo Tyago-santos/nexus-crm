@@ -461,18 +461,21 @@ export class MemoryStore {
     };
   }
 
-  createCustomer(orgId: string, userId: string, input: Partial<Customer> & { name: string; phone: string }) {
-    const key = phoneMatchKey(input.phone);
-    const duplicate = this.customers.find(
-      (c) => c.organization_id === orgId && phoneMatchKey(c.phone) === key,
-    );
-    if (duplicate) throw conflict("Já existe um cliente com este telefone nesta organização", { customer_id: duplicate.id });
+  createCustomer(orgId: string, userId: string, input: Partial<Customer> & { name: string; phone?: string }) {
+    const phone = input.phone ?? "";
+    if (phone) {
+      const key = phoneMatchKey(phone);
+      const duplicate = this.customers.find(
+        (c) => c.organization_id === orgId && phoneMatchKey(c.phone) === key,
+      );
+      if (duplicate) throw conflict("Já existe um cliente com este telefone nesta organização", { customer_id: duplicate.id });
+    }
     const customer: Customer = {
       id: randomUUID(),
       organization_id: orgId,
       name: input.name,
       email: input.email ?? null,
-      phone: input.phone,
+      phone,
       company: input.company ?? null,
       document: input.document ?? null,
       address: input.address ?? null,
@@ -790,16 +793,17 @@ export class MemoryStore {
 
     const owner = this.members.find((m) => m.organization_id === orgId && m.role === "owner") ?? this.members.find((m) => m.organization_id === orgId);
     if (!owner) throw notFound("Organização");
-    const phone = `+${input.externalChatId.split("@")[0]}`;
-    let customer = this.customers.find(
-      (c) => c.organization_id === orgId && phoneMatchKey(c.phone) === phoneMatchKey(phone),
-    );
+    const isGroup = input.externalChatId.endsWith("@g.us");
+    const phone = isGroup ? "" : `+${input.externalChatId.split("@")[0]}`;
+    let customer = isGroup
+      ? this.customers.find((c) => c.organization_id === orgId && c.name === (input.customerName ?? "Grupo"))
+      : this.customers.find((c) => c.organization_id === orgId && phoneMatchKey(c.phone) === phoneMatchKey(phone));
     if (!customer) {
       customer = this.createCustomer(orgId, owner.user_id, {
-        name: input.customerName ?? phone,
+        name: input.customerName ?? (isGroup ? "Grupo" : phone),
         phone,
-        tags: ["WhatsApp"],
-        notes: "Cliente criado automaticamente a partir de mensagem recebida no WhatsApp.",
+        tags: isGroup ? ["WhatsApp", "Grupo"] : ["WhatsApp"],
+        notes: isGroup ? "Grupo do WhatsApp sincronizado automaticamente." : "Cliente criado automaticamente a partir de mensagem recebida no WhatsApp.",
       });
     }
 
