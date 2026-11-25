@@ -50,6 +50,8 @@ export async function buildApp(options: { logger?: boolean } = {}): Promise<Fast
       else callback(new Error("Origem não permitida"), false);
     },
     credentials: true,
+    methods: ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   });
   await app.register(jwt, { secret: env.JWT_SECRET });
   await app.register(rateLimit, { max: 300, timeWindow: "1 minute" });
