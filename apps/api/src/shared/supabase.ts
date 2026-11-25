@@ -219,6 +219,42 @@ export async function hydrateCustomers(store: { customers: any[] }): Promise<voi
   } catch {}
 }
 
+export async function hydrateOrganizations(store: { organizations: any[] }): Promise<void> {
+  const sb = getSupabaseClient();
+  if (!sb) return;
+  try {
+    const { data } = await sb.from("organizations").select("*");
+    if (data && data.length) store.organizations = data;
+  } catch {}
+}
+
+export async function hydrateUsers(store: { users: any[] }): Promise<void> {
+  const sb = getSupabaseClient();
+  if (!sb) return;
+  try {
+    const { data } = await sb.from("users").select("*");
+    if (data && data.length) {
+      store.users = data.map((u: any) => ({
+        id: u.id,
+        full_name: u.full_name,
+        email: u.email,
+        avatar_url: u.avatar_url,
+        password: "",
+        created_at: u.created_at,
+      }));
+    }
+  } catch {}
+}
+
+export async function hydrateMembers(store: { members: any[] }): Promise<void> {
+  const sb = getSupabaseClient();
+  if (!sb) return;
+  try {
+    const { data } = await sb.from("organization_members").select("*");
+    if (data && data.length) store.members = data;
+  } catch {}
+}
+
 export async function persistWhatsAppAccount(account: {
   id: string;
   organization_id: string;

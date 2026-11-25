@@ -1,14 +1,17 @@
 import { buildApp } from "./app";
 import { env } from "./config/env";
-import { hydrateWhatsAppStore, hydrateCustomers } from "./shared/supabase";
+import { hydrateWhatsAppStore, hydrateCustomers, hydrateOrganizations, hydrateUsers, hydrateMembers } from "./shared/supabase";
 import { store } from "./shared/store";
 
 const app = await buildApp();
 
 // Hidrata o store em memória a partir do Supabase (se configurado).
 if (process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
-  await hydrateWhatsAppStore(store as any);
+  await hydrateOrganizations(store as any);
+  await hydrateUsers(store as any);
+  await hydrateMembers(store as any);
   await hydrateCustomers(store as any);
+  await hydrateWhatsAppStore(store as any);
 }
 
 process.on("SIGINT", async () => {
