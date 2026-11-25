@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 import { useAuth } from "@/app/auth";
 import { cn } from "@/lib/utils";
-import { Avatar, Badge, Button, Progress } from "@/components/ui";
+import { Avatar, Badge, Button } from "@/components/ui";
 import { useActivities, useLeads, useTasks } from "@/lib/queries";
 
 const navItems = [
@@ -45,7 +45,7 @@ const managementItems = [
 ] as const;
 
 function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
-  const { session, can } = useAuth();
+  const { can } = useAuth();
   const navigate = useNavigate();
   const { data: leads } = useLeads();
   const { data: tasks } = useTasks("pending");
@@ -166,21 +166,6 @@ function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
           </div>
         ) : null}
       </nav>
-
-      <div className="m-3 rounded-xl border border-line bg-surface/80 p-3">
-        <div className="flex items-center justify-between gap-2">
-          <div className="min-w-0">
-            <p className="truncate text-xs font-bold text-ink">{session?.user.organization.name ?? "TechVentures Brasil"}</p>
-            <p className="text-[10px] text-muted">Plano Enterprise</p>
-          </div>
-          <ChevronDown className="size-3.5 shrink-0 text-muted" />
-        </div>
-        <div className="mt-2 flex items-center justify-between text-[10px] text-muted">
-          <span>Armazenamento</span>
-          <span className="font-semibold text-ink-soft">68,4 / 100 GB</span>
-        </div>
-        <Progress value={68.4} tone="success" className="mt-1.5 h-1.5" />
-      </div>
     </aside>
   );
 }
