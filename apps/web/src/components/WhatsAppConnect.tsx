@@ -197,7 +197,7 @@ export function WhatsAppConnectModal({ open, onClose }: { open: boolean; onClose
             )}
 
             <div className="flex flex-wrap items-center justify-center gap-2 text-[10px] text-muted">
-              <span className="flex items-center gap-1"><Smartphone className="size-3" /> {account?.phone_number ? formatPhone(account.phone_number) : "+55 11 3290-8800"}</span>
+              <span className="flex items-center gap-1"><Smartphone className="size-3" /> {account?.phone_number ? formatPhone(account.phone_number) : "Sem número"}</span>
               <span className="flex items-center gap-1"><ShieldCheck className="size-3" /> Sessão cifrada</span>
               <span className="flex items-center gap-1"><MessageCircle className="size-3" /> {provider === "demo" || !provider ? "Demonstração local" : provider}</span>
             </div>
