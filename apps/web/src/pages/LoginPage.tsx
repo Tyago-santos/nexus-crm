@@ -1,24 +1,18 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { ArrowRight, BarChart3, Check, Eye, EyeOff, Lock, Mail, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Eye, EyeOff, Lock, Mail, Sparkles } from "lucide-react";
 import { useAuth } from "@/app/auth";
 import { ApiError } from "@/lib/api";
 import { Badge, Button, Input } from "@/components/ui";
 import { useToast } from "@/components/toast";
-
-const demoAccounts = [
-  { label: "Owner", email: "camila@nexus.ai", description: "Acesso completo" },
-  { label: "Manager", email: "marina@nexus.ai", description: "Gestão comercial" },
-  { label: "Seller", email: "rafael@nexus.ai", description: "Vendas" },
-];
 
 export default function LoginPage() {
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const { toast } = useToast();
-  const [email, setEmail] = useState("camila@nexus.ai");
-  const [password, setPassword] = useState("nexus123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -86,24 +80,8 @@ export default function LoginPage() {
             ))}
           </div>
 
-          <div className="mt-9 grid grid-cols-3 gap-3">
-            {[
-              { label: "Receita/mês", value: "R$ 184k" },
-              { label: "Conversão", value: "26%" },
-              { label: "Leads/IA", value: "342" },
-            ].map((item) => (
-              <div key={item.label} className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur">
-                <p className="font-display text-lg font-extrabold">{item.value}</p>
-                <p className="text-[10px] uppercase tracking-wide text-white/50">{item.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
 
-        <div className="relative flex items-center gap-2 text-xs text-white/40">
-          <BarChart3 className="size-4" />
-          Dados de demonstração isolados por organização. Nenhum credencial fica no frontend.
-        </div>
       </div>
 
       <div className="flex w-full items-center justify-center px-5 py-10 lg:w-1/2">
@@ -117,7 +95,7 @@ export default function LoginPage() {
 
           <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">Bem-vindo de volta</p>
           <h2 className="mt-1.5 text-2xl font-extrabold tracking-tight text-ink">Entre na sua conta</h2>
-          <p className="mt-1 text-sm text-muted">Use as credenciais de demonstração ou a sua conta.</p>
+          <p className="mt-1 text-sm text-muted">Use as suas credenciais para entrar.</p>
 
           <form onSubmit={handleSubmit} className="mt-7 space-y-4">
             <label className="block">
@@ -169,26 +147,6 @@ export default function LoginPage() {
             </Button>
           </form>
 
-          <div className="mt-6 rounded-xl border border-line bg-surface/70 p-3">
-            <p className="text-[10px] font-bold uppercase tracking-wide text-muted">Contas de demonstração · senha nexus123</p>
-            <div className="mt-2 grid gap-1.5 sm:grid-cols-3">
-              {demoAccounts.map((account) => (
-                <button
-                  key={account.email}
-                  type="button"
-                  onClick={() => {
-                    setEmail(account.email);
-                    setPassword("nexus123");
-                    setError(null);
-                  }}
-                  className="rounded-lg border border-line bg-white px-2 py-1.5 text-left transition hover:border-primary/40 hover:bg-primary-soft/40"
-                >
-                  <span className="block text-[11px] font-bold text-ink">{account.label}</span>
-                  <span className="block truncate text-[10px] text-muted">{account.email}</span>
-                </button>
-              ))}
-            </div>
-          </div>
 
           <p className="mt-6 text-center text-sm text-muted">
             Ainda não tem conta?{" "}

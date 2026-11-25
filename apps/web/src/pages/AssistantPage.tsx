@@ -363,7 +363,6 @@ export default function AssistantPage() {
           <Card className="p-4">
             <div className="flex items-center justify-between">
               <h2 className="flex items-center gap-1.5 font-display text-sm font-bold text-ink"><ArrowUpRight className="size-4 text-primary" /> Atalhos</h2>
-              <Badge variant="outline">demo</Badge>
             </div>
             <div className="mt-2 grid grid-cols-2 gap-1.5">
               {[

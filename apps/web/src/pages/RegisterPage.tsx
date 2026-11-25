@@ -81,7 +81,7 @@ export default function RegisterPage() {
               ))}
             </div>
             <div className="mt-8 rounded-xl border border-line bg-surface p-4 text-xs text-muted">
-              <p className="font-semibold text-ink-soft">Plano de demonstração</p>
+              <p className="font-semibold text-ink-soft">Comece agora</p>
               <p className="mt-1">Você pode convidar o seu time e alternar entre os modos de IA a qualquer momento.</p>
             </div>
           </div>

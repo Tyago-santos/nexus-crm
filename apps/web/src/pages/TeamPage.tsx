@@ -30,7 +30,7 @@ export default function TeamPage() {
   const invite = useInviteMember();
   const updateRole = useUpdateMemberRole();
   const [open, setOpen] = useState(false);
-  const [form, setForm] = useState({ full_name: "", email: "", role: "seller", password: "nexus123" });
+  const [form, setForm] = useState({ full_name: "", email: "", role: "seller", password: "" });
   const [error, setError] = useState<string | null>(null);
 
   const stats = useMemo(() => {
@@ -52,7 +52,7 @@ export default function TeamPage() {
         onSuccess: () => {
           toast("Convite enviado. O utilizador já pode entrar com a senha provisória.");
           setOpen(false);
-          setForm({ full_name: "", email: "", role: "seller", password: "nexus123" });
+          setForm({ full_name: "", email: "", role: "seller", password: "" });
         },
         onError: (cause) => setError(cause instanceof Error ? cause.message : "Não foi possível convidar o membro."),
       },
