@@ -28,11 +28,11 @@
 
 | | |
 |---|---|
-| [🎯 O que é](#o-que-e) | [⚙️ API](#api) |
-| [✨ Funcionalidades](#funcionalidades) | [🌐 Site](#site) |
-| [🧩 Como funciona](#como-funciona) | [💬 WhatsApp e IA](#whatsapp-e-ia) |
-| [🚀 Como rodar](#como-rodar) | [🔐 Login e permissões](#login-e-permissões) |
-| [☁️ Deploy](#deploy) | [🛠️ Tecnologias](#tecnologias) |
+| [🎯 O que é](#user-content-o-que-e) | [⚙️ API](#user-content-api) |
+| [✨ Funcionalidades](#user-content-funcionalidades) | [🌐 Site](#user-content-site) |
+| [🧩 Como funciona](#user-content-como-funciona) | [💬 WhatsApp e IA](#user-content-whatsapp-e-ia) |
+| [🚀 Como rodar](#user-content-como-rodar) | [🔐 Login e permissões](#user-content-login-e-permissões) |
+| [☁️ Deploy](#user-content-deploy) | [🛠️ Tecnologias](#user-content-tecnologias) |
 
 ---
 
